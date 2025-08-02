@@ -1,12 +1,10 @@
 'use client';
-
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
-import BlogLogo from '@icons/blog-logo.svg';
 import { LanguageSelector } from '@src/components/features/language-selector';
 import { Container } from '@src/components/shared/container';
-
 export const Header = () => {
   const { t } = useTranslation();
 
@@ -15,7 +13,10 @@ export const Header = () => {
       <nav>
         <Container className="flex items-center justify-between">
           <Link href="/" title={t('common.homepage')}>
-            <BlogLogo />
+            <Image alt="Logo" src="/images/Dark Logo.png" width={'50'} height={50} />{' '}
+            <span className="font-Poppins text-white ml-2 font-light">
+              Ank<span className="text-slate-400 font-normal">ith</span>
+            </span>
           </Link>
           <LanguageSelector />
         </Container>
